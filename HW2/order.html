@@ -1,0 +1,112 @@
+<html>
+    <title>Contact Us</title>
+<head>
+    <style>
+        .heading {
+            position: relative;
+            z-index: 100;
+        }
+        /* make the background */
+        .bg {
+            background-image: url('cake.jpg');
+            height: 100%;
+            background-position: relative;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* to make the navigation bar */
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        li {
+            float: left;
+            background-color: #ffffff
+        }
+
+        a {
+            display: block;
+            padding: 8px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #555;
+            color: white;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .row:after {
+		content: "";
+		display: table;
+		clear: both;
+		}
+/* keep the header the same */
+</style>
+</head>
+<body>
+    <div class = "bg">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="order.html">Contact Us!</a></li>
+            <li><a href="last">About us!</a></li><br>
+        </ul>
+    <h1> Order your own Cake! </h1><br>
+    <a href="mailto:orders@cakeGalore.com" target="_blank" style="padding:0px">
+        Click here to email us at orders@cakeGalore.com
+    </a>
+
+    <br><p>
+        Or Call us at 781-266-6259
+    </p> Fill out an inquiry form! <br> <br>
+
+    <div>
+		<form action="" method = "get">
+			<div class="row">
+			<div class="col-25">
+			<label for="name">Name</label>
+		</div>
+		<div class="col-75">
+			<input type="text" id="name" name="name" placeholder="Your name..">
+		</div>
+		</div>
+		
+		<div class="row">
+		<div class="col-25">
+		  <label for="email">Email or Phone Number</label>
+		</div>
+		<div class="col-75">
+		  <input type="text" id="email" name="email" placeholder="Your contact info..">
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-25">
+			<label for="subject">Subject</label>
+		</div>
+		<div class="col-75">
+			<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+		</div>
+		</div>
+		<div class="row">
+			<input type="submit" value="Submit">
+		</div>
+		</form>
+        </div>
+</body>
+</html>

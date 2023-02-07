@@ -2,17 +2,57 @@
 <head>
 <title>Cake Galore</title>
 <style>
-    body {
-        background: #eee;
-		font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-			
-		background-image: url('cake.jpg');
-		background-attachment: fixed; 
+    .heading {
+        position: relative;
+        z-index: 100;
+    }
+    .bg {
+        background-image: url('cake.jpg');
+        height: 100%;
+        background-position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #f1f1f1;
+    }
+
+    li {
+        float: left;
+        background-color: #ffffff
+    }
+
+    a {
+        display: block;
+        color: #000000;
+        padding: 8px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: #555;
+        color: white;
     }
 </style>
 </head>
 <body>
-    Test
+    <div class = "bg">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="order.html">Order From Us!</a></li>
+            <li><a href="last">About us!</a></li>
+        </ul>
+
+    <br><br><br>
+    <a href = "index.html">
+        <img src ="cake from CC.jpg"
+                alt ="Cake image from creative Commons by FFCU" height = "100" padding = 100px>
+    </a>
+    </div>
 </body>
 
 </html>
