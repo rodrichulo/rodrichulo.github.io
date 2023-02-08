@@ -32,25 +32,8 @@ li a:hover {
     color: white;
 }
 
-#foot-contain
-{
-	position: relative;
-	min-height: 10vh;
+@media screen and (max-width: 800px) {
+        .left, .main, .right {
+        width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
 }
-
-#content-wrap{
-	padding-bottom: 2.5rem;
-}
-
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  border: 3px solid #002BFF;
-}
-
-p.red {color:#FE0000}
-
-p.blue{color:#002BFF}
-
-p.gray{color:#8F8B9B}

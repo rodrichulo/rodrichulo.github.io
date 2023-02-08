@@ -3,17 +3,55 @@
 	<meta charset="utf-8">
 	<title> About us Page </title>
 	<link rel='stylesheet' type="text/css" href="index.css" />
+    <style>
+        .white-box {
+            background-color: white;
+            color: black;
+            display: inline-flex;
+        }
+
+        @media screen and (max-width: 800px) {
+            .left, .main, .right {
+            width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+            }
+        }
+    </style>
 </head>
 
-<body>
-	<header>
-		<nav>
-			<ul>
-				<li><a href = "index.html">Home</a></li>
-				<li><a href = "order.html">Order From Us!</a></li>
-				<li><a href = "about.html">About Us!</a></li>
-			</ul>
-		</nav>
-	</header>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href = "index.html">Home</a></li>
+                    <li><a href = "order.html">Order From Us!</a></li>
+                    <li><a href = "about.html">About Us!</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <h1><br>About Us! </h1>
+        <h1><br>About Us! </h1>
+        <h2> We are Cake Galore! </h2>
+
+            <div class="white-box">
+            <p> We are a new Cake store located at the heart of Sommerville. We
+                offer a variety of cakes including: Chocolate, Vanilla, Strawberry 
+                Shortcake.
+                <br>
+
+                We were founded in 2022 by Ronit Sinha, a globally renowned Chef.
+                </p>
+            </div>
+            <div class = white-box>
+                <br><br><br>    
+                <h2> Operating Hours: </h2>
+
+                Monday - Friday: 8:00 P.M. - 8:30 <br>
+                Saturday: Closed <br>
+                Sunday: Closed
+                <br>
+            </div>
+    </body>
+
+
+</html>
+

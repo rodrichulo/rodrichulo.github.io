@@ -12,6 +12,11 @@
     background-size: cover;
 }
 
+.white-box {
+    background-color: white;
+    color: black;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -36,21 +41,10 @@ li a:hover {
     color: white;
 }
 
-#foot-contain
-{
-	position: relative;
-	min-height: 10vh;
-}
-
-#content-wrap{
-	padding-bottom: 2.5rem;
-}
-
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  border: 3px solid #002BFF;
+@media screen and (max-width: 800px) {
+    .left, .main, .right {
+        width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
 }
 </style>
 </head>
@@ -67,7 +61,8 @@ li a:hover {
             <img src ="cake from CC.jpg"
                     alt ="Cake image from creative Commons by FFCU" height = "100" padding = 100px>
         </a>
-    <div></div>
+    <h1>Cake Galore!</h1>
+    <h2> We make Cakes of all types! </h2>
 </body>
 
 </html>
