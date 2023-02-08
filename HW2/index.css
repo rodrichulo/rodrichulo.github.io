@@ -1,8 +1,4 @@
-<html>
-<head>
-<title>Cake Galore</title>
-<style>
-    body {
+body {
 	background: #eee;
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 	
@@ -52,22 +48,9 @@ li a:hover {
   width: 100%;
   border: 3px solid #002BFF;
 }
-</style>
-</head>
-<body>
-    <div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="order.html">Order From Us!</a></li>
-            <li><a href="about.html">About us!</a></li>
-        </ul>
 
-        <br><br><br>
-        <a href = "index.html">
-            <img src ="cake from CC.jpg"
-                    alt ="Cake image from creative Commons by FFCU" height = "100" padding = 100px>
-        </a>
-    <div></div>
-</body>
+p.red {color:#FE0000}
 
-</html>
+p.blue{color:#002BFF}
+
+p.gray{color:#8F8B9B}

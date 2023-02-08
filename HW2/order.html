@@ -1,72 +1,71 @@
 <html>
-    <title>Contact Us</title>
 <head>
-    <style>
-        .heading {
-            position: relative;
-            z-index: 100;
-        }
-        /* make the background */
-        .bg {
-            background-image: url('cake.jpg');
-            height: 100%;
-            background-position: relative;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+<title>Cake Galore</title>
+<style>
+    body {
+	background: #eee;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	
+	background-image: url('cake.jpg');
+    background-position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
 
-        /* to make the navigation bar */
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            background-color: #f1f1f1;
-        }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #f1f1f1;
+    }
 
-        li {
-            float: left;
-            background-color: #ffffff
-        }
+    li {
+        float: left;
+        background-color: #ffffff
+    }
 
-        a {
-            display: block;
-            padding: 8px;
-            text-decoration: none;
-        }
+    a {
+        display: block;
+        color: #000000;
+        padding: 8px;
+        text-decoration: none;
+    }
 
-        li a:hover {
-            background-color: #555;
-            color: white;
-        }
+    li a:hover {
+        background-color: #555;
+        color: white;
+    }
 
-        .col-75 {
-            float: left;
-            width: 75%;
-            margin-top: 6px;
-        }
+    #foot-contain
+    {
+        position: relative;
+        min-height: 10vh;
+    }
 
-        .col-25 {
-            float: left;
-            width: 25%;
-            margin-top: 6px;
-        }
+    #content-wrap{
+        padding-bottom: 2.5rem;
+    }
 
-        .row:after {
-		content: "";
-		display: table;
-		clear: both;
-		}
-/* keep the header the same */
+    #footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border: 3px solid #002BFF;
+    }
 </style>
 </head>
 <body>
-    <div class = "bg">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="order.html">Contact Us!</a></li>
-            <li><a href="last">About us!</a></li><br>
-        </ul>
-    <h1> Order your own Cake! </h1><br>
+    <header>
+        <nav>
+            <ul>
+                <li><a href = "index.html">Home</a></li>
+                <li><a href = "order.html">Order From Us!</a></li>
+                <li><a href = "about.html">About Us!</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div><br>
+    <h1> Order your own Cake! </h1>
     <a href="mailto:orders@cakeGalore.com" target="_blank" style="padding:0px">
         Click here to email us at orders@cakeGalore.com
     </a>
@@ -78,28 +77,28 @@
     <div>
 		<form action="" method = "get">
 			<div class="row">
-			<div class="col-25">
+			<div class="col-left">
 			<label for="name">Name</label>
 		</div>
-		<div class="col-75">
+		<div class="col-right">
 			<input type="text" id="name" name="name" placeholder="Your name..">
 		</div>
 		</div>
 		
 		<div class="row">
-		<div class="col-25">
+		<div class="col-left">
 		  <label for="email">Email or Phone Number</label>
 		</div>
-		<div class="col-75">
+		<div class="col-right">
 		  <input type="text" id="email" name="email" placeholder="Your contact info..">
 		</div>
 		</div>
 
 		<div class="row">
-		<div class="col-25">
+		<div class="col-left">
 			<label for="subject">Subject</label>
 		</div>
-		<div class="col-75">
+		<div class="col-right">
 			<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 		</div>
 		</div>
