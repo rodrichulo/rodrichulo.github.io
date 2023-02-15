@@ -1,97 +1,94 @@
-<root>
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/css" href="pretty.css"?>
-    <songList>
-        <song>
-            <title> Track: Locked Out of Heaven</title>
-            <artist> Artist: Bruno Mars </artist>
-            <genre> Genre: Pop </genre>
-            <year> Year: 2010 </year>
-        </song>
+<?xml-stylesheet href="pretty.css"?>
+<songList>
+    <song>
+        <title> Track: Locked Out of Heaven</title>
+        <artist> Artist: Bruno Mars </artist>
+        <genre> Genre: Pop </genre>
+        <year> Year: 2010 </year>
+    </song>
 
-        <song>
-            <title> Track: 24K Magic </title>
-            <artist> Artist: Bruno Mars </artist>
-            <genre> Genre: Funk </genre>
-            <year> Year: 2016 </year>
-        </song>
+    <song>
+        <title> Track: 24K Magic </title>
+        <artist> Artist: Bruno Mars </artist>
+        <genre> Genre: Funk </genre>
+        <year> Year: 2016 </year>
+    </song>
 
-        <song>
-            <title> Track: Locked Out of Heaven</title>
-            <artist> Artist: Bruno Mars </artist>
-            <genre> Genre: Pop </genre>
-            <year> Year: 2010 </year>
-        </song>
+    <song>
+        <title> Track: Locked Out of Heaven</title>
+        <artist> Artist: Bruno Mars </artist>
+        <genre> Genre: Pop </genre>
+        <year> Year: 2010 </year>
+    </song>
 
-        <song>
-            <title> Track: Finesse </title>
-            <artist> Artist: Bruno Mars </artist>
-            <genre> Genre: Funk </genre>
-            <year> Year: 2016 </year>
-        </song>
+    <song>
+        <title> Track: Finesse </title>
+        <artist> Artist: Bruno Mars </artist>
+        <genre> Genre: Funk </genre>
+        <year> Year: 2016 </year>
+    </song>
 
-        <song>
-            <title> Track: She Knows </title>
-            <artist> Artist: J.Cole </artist>
-            <genre> Genre: Rap </genre>
-            <year> Year: 2013 </year>
-        </song>
+    <song>
+        <title> Track: She Knows </title>
+        <artist> Artist: J.Cole </artist>
+        <genre> Genre: Rap </genre>
+        <year> Year: 2013 </year>
+    </song>
 
-        <song>
-            <title> Track: Wet Dreamz </title>
-            <artist> Artist: J.Cole </artist>
-            <genre> Genre: Rap </genre>
-            <year> Year: 2014 </year>
-        </song>
+    <song>
+        <title> Track: Wet Dreamz </title>
+        <artist> Artist: J.Cole </artist>
+        <genre> Genre: Rap </genre>
+        <year> Year: 2014 </year>
+    </song>
 
-        <song>
-            <title> Track: 90 Proof </title>
-            <artist> Artist: Smino ft. J.Cole </artist>
-            <genre> Genre: Rap </genre>
-            <year> Year: 2022 </year>
-        </song>    
+    <song>
+        <title> Track: 90 Proof </title>
+        <artist> Artist: Smino ft. J.Cole </artist>
+        <genre> Genre: Rap </genre>
+        <year> Year: 2022 </year>
+    </song>    
 
-        <song>
-            <title> Track: She Knows </title>
-            <artist> Artist: J.Cole </artist>
-            <genre> Genre: Rap </genre>
-            <year> Year: 2013 </year>
-        </song>
+    <song>
+        <title> Track: She Knows </title>
+        <artist> Artist: J.Cole </artist>
+        <genre> Genre: Rap </genre>
+        <year> Year: 2013 </year>
+    </song>
 
-        <song>
-            <title> Track: History </title>
-            <artist> Artist: Rich Brian </artist>
-            <genre> Genre: Rap </genre>
-            <year> Year: 2018 </year>
-        </song>
+    <song>
+        <title> Track: History </title>
+        <artist> Artist: Rich Brian </artist>
+        <genre> Genre: Rap </genre>
+        <year> Year: 2018 </year>
+    </song>
 
-        <song>
-            <title> Track: 100 Degrees </title>
-            <artist> Artist: Rich Brian </artist>
-            <genre> Genre: Rap </genre>
-            <year> Year: 2019 </year>
-        </song>
+    <song>
+        <title> Track: 100 Degrees </title>
+        <artist> Artist: Rich Brian </artist>
+        <genre> Genre: Rap </genre>
+        <year> Year: 2019 </year>
+    </song>
 
-        <song>
-            <title> Track: Vivid </title>
-            <artist> Artist: Rich Brian </artist>
-            <genre> Genre: Rap </genre>
-            <year> Year: 2022 </year>
-        </song>
+    <song>
+        <title> Track: Vivid </title>
+        <artist> Artist: Rich Brian </artist>
+        <genre> Genre: Rap </genre>
+        <year> Year: 2022 </year>
+    </song>
 
-        <song>
-            <title> Track: Vivid </title>
-            <artist> Artist: Rich Brian ft. $NOT </artist>
-            <genre> Genre: Rap </genre>
-            <year> Year: 2022 </year>
-        </song>
+    <song>
+        <title> Track: Vivid </title>
+        <artist> Artist: Rich Brian ft. $NOT </artist>
+        <genre> Genre: Rap </genre>
+        <year> Year: 2022 </year>
+    </song>
 
-        <song>
-            <title> Track: Heebiejeebies </title>
-            <artist> Artist: Amine ft. Kehlani </artist>
-            <genre> Genre: Rap </genre>
-            <year> Year: Year: 2017 </year>
-        </song>
-
-    </songList>
-</root>
+    <song>
+        <title> Track: Heebiejeebies </title>
+        <artist> Artist: Amine ft. Kehlani </artist>
+        <genre> Genre: Rap </genre>
+        <year> Year: Year: 2017 </year>
+    </song>
+</songList>
