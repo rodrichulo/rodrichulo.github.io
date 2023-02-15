@@ -1,0 +1,34 @@
+songList
+			{
+			font-size:80%;
+			margin:0.5em;
+			font-family: Verdana;
+			display:block;
+			}
+song 
+            {
+			display:block;
+			border: 1px solid silver;
+			margin:0.5em;
+			padding:0.5em;
+			background-color:whitesmoke;
+			}
+title, artist, genre, year   {
+								display:block;
+								text-align:center;
+								}
+title {
+	color:green;
+	text-decoration: underline ;
+	font-weight:bolder;
+	font-size:20px;
+	}
+artist {
+	color:green
+	}
+genre {
+	color:brown
+	}
+year {
+	color:blue
+	}
