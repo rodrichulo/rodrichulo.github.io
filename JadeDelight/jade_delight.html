@@ -127,7 +127,8 @@ function td(content, className="")
 				cost[index].value = 0;
 			}
 
-			var x = parseFloat(getsubTotals());
+			var x = getsubTotals();
+			x = parseFloat(x);
 			document.getElementById('subtotal').value = x;
 			document.getElementById('tax').value = (x * .0625).toFixed(2);
 			document.getElementById('total').value = (x * 1.0625).toFixed(2);
@@ -217,19 +218,25 @@ function td(content, className="")
 			{
 				quan = parseFloat(quan[0].value);
 				costs = parseFloat(cost[i].value);
-				order += quan + " " + menuItems[i].name + ": $" + costs + "\n";
+				order += quan + " " + menuItems[i].name + ": $" + costs + "<br>";
 			}
 		}
-		order += "Delivered by: " + time + " on " + finalDay + "\n";
-		let newWin = window.open(rodrichulo.github.io/JD/order.html);
+		delivery = "Delivery by: " + time + " on " + finalDay + "\n";
+		tax = document.getElementById('tax').value;
+		subtotal = document.getElementById('total').value;
+		total = document.getElementById('total').value;
+		let newWin = window.open();
 		newWin.document.write(order);
+		newWin.document.write("<br>");
+		newWin.document.write("Tax is $" + tax + "<br> Subtotal is $" + subtotal + "<br> Total is $" + total);
+		newWin.document.write("<br>" +delivery);
 	}
 
 	function getsubTotals() {
 		var total = 0;
 		cost = document.getElementsByName('cost');
 		for (let i = 0; i < 5; i++) {
-			let num = cost[i].value;
+			let num = parseFloat(cost[i].value);
 			//if the cost is a number, add it on
 			if (!isNaN(num)) {
 				total += num;
