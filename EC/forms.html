@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Checking/Unchecking Boxes</title>
+    </head>
+
+    <body>
+        <input type="checkbox" id="checkAll" name ="checkAll" onclick="toggle(this, 'labelX')"><label for="checkAll" name="labelX">Check All buttons</label> <br>
+        <input type="checkbox" id="first" name ="box"> first <br>
+        <input type="checkbox" id="second" name="box"> second <br>
+        <input type="checkbox" id="third" name="box"> third <br>
+        <input type="checkbox" id="fourth" name="box"> fourth <br>
+    </body>
+
+    <script>
+        function toggle(source, label) {
+            checkboxes = document.getElementsByName("box");
+            for(var i=0, n=checkboxes.length;i<n;i++) {
+                checkboxes[i].checked = source.checked;
+            }
+            if (source.checked) {
+                var x = document.getElementsByName(label);
+                x[0].textContent = "Uncheck All buttons";
+            } else {
+                var x = document.getElementsByName(label);
+                x[0].textContent = "Check All buttons";
+            }
+        }
+    </script>
+</html>

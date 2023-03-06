@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Form Extra Credit</title>
+        <style>
+            form {
+                display: flex;
+                margin-left:auto;
+                margin-right:auto;
+                align-items: center;
+                flex-flow: row wrap;
+                vertical-align: middle;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form>
+
+            <input type ="text"  id ="firstBox" value="">
+            <input type="button" id="jumpBtn" name="jump" value="jump&gt" onclick="changeText()"> 
+            <input type ="text"  id ="secondBox" value="">
+        </form>
+            <a href="forms.html">Checked/Unchecked</a></li><br>
+
+    </body>
+
+    <script>
+        function changeText() {
+            var jumpVal = document.getElementById("jumpBtn").value;
+            var leftSide = document.getElementById("firstBox").value;
+            var rightSide = document.getElementById("secondBox").value;
+            if (jumpVal == "jump>") {
+                document.getElementById("secondBox").value = leftSide;
+                document.getElementById("firstBox").value = "";
+                document.getElementById("jumpBtn").value = "<jump";
+            } else {
+                document.getElementById("firstBox").value = rightSide;
+                document.getElementById("secondBox").value = "";
+                document.getElementById("jumpBtn").value = "jump>";
+
+            }
+        }
+    </script>
+</html>
