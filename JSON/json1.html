@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Json1</title>
+    </head>
+<body>
+<script>
+    var songList = '{"songlist" : [' +
+    '{ "title": "Locked Out of Heaven", "artist": "Bruno Mars","genre": "Pop", "year": "2010"},' +
+    '{ "title": "24K Magic", "artist": "Bruno Mars", "genre": "Funk", "year": "2016"},' +
+    '{ "title": "Locked Out of Heaven", "artist": "Bruno Mars", "genre": "Pop","year": "2010"},' +
+    '{ "title": "Finesse", "artist": "Bruno Mars","genre": "Funk","year": "2016"},' + 
+    '{"title": "She Knows", "artist": "J.Cole","genre": "Rap","year": "2013"},' +
+    '{ "title": "Wet Dreamz", "artist": "J.Cole", "genre": "Rap", "year": "2014"},' +
+    '{ "title": "90 Proof","artist": "Smino ft. J.Cole","genre": "Rap","year": "2022"},' +
+    '{"title": "She Knows","artist": "J.Cole","genre": "Rap","year": "2013"},'+
+    '{"title": "History","artist": "Rich Brian","genre": "Rap","year": "2018"},'+
+    '{"title": "100 Degrees","artist": "Rich Brian","genre": "Rap","year": "2019"},' +
+    '{"title": "Vivid", "artist": "Rich Brian","genre": "Rap","year": "2022" },' +
+    '{ "title": "Vivid", "artist": "Rich Brian ft. $NOT","genre": "Rap","year": "2022"},' +
+    '{ "title": "Heebiejeebies", "artist": "Amine ft. Kehlani", "genre": "Rap","year": "2017"},'+
+    '{ "title": "on the street", "artist": "J-Cole", "genre": ["rap", "k-pop"], "year": "2023"},' +
+    '{ "title": "Thin line", "artist": "Dice Raw", "genre": ["Hip-hop", "rap"], "year": "2012"},' +
+    '{ "title": "Jimmy", "artist": "love-sadKID", "genre": ["rap", "r&b"], "year": "2022"},' +
+    '{ "title": "CUFF IT", "artist": "Beyonce", "genre": ["pop", "alternative"], "year": "2022"}]}';
+    list = JSON.stringify(songList);
+    document.body.innerHTML = list;
+        // function printValues(obj) {
+        //     for(var k in obj) {
+        //         if(obj[k] instanceof Object) {
+        //             printValues(obj[k]);
+        //         } else {
+        //             document.write(obj[k] + "<br>");
+        //         };
+        //     }
+        // };
+
+        // printValues(list);
+
+    </script>
+</body>
+</html>

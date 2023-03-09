@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Json1</title>
+    </head>
+<body>
+<script>
+
+    fetch("songlist.json")
+    .then(response => {
+        return response.json();
+    })
+    .then(data => console.log(data));
+    // list = JSON.stringify(songList);
+    // document.body.innerHTML = list;
+
+
+    </script>
+</body>
+</html>
