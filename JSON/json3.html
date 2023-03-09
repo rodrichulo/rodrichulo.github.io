@@ -17,7 +17,7 @@
             temp.innerHTML += 'Artists: ' + data[i].artist + '<br';
 
             temp.innerHTML += 'br' + 'Genres: ';
-            console.log(data[i].artist);
+            console.log(data[i].genre[0]);
             data[i].artist.forEach(function(genre) {
                 temp.innerHTML += 'genre ';
             });
