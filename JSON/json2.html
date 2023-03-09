@@ -1,19 +1,17 @@
 <html>
     <head>
-        <title>Json1</title>
+        <title>Json2</title>
     </head>
 <body>
+    <div id = "main_div">
 <script>
 
-    fetch("songlist.json")
-    .then(response => {
-        return response.json();
-    })
-    .then(data => console.log(data));
-    // list = JSON.stringify(songList);
-    // document.body.innerHTML = list;
-
+    fetch("https://rodrichulo.github.io/JSON/songlist.json")
+    .then(response => 
+        response.json())
+    .then(data => document.body.innerHTML = JSON.stringify(data));
 
     </script>
+    </div>
 </body>
 </html>

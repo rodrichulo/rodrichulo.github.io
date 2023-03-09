@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Json3</title>
+    </head>
+<body>
+    <div id = "main_div">
+<script>
+
+    var list = fetchData();
+    // printData(list)
+
+    function printData(data) {
+        var mainContainer = document.getElementById("main_div");
+        for (let i = 0; i < data.length; i++) {
+            var temp = document.createElement("div");
+            temp.innerHTML = 'Title: ' + data[i].title + '<br>' + 'Year: ' + data[i].year + '<br>';
+            temp.innerHTML += 'Artists: ' + data[i].artist + '<br';
+
+            temp.innerHTML += 'br' + 'Genres: ';
+            console.log(data[i].artist);
+            data[i].artist.forEach(function(genre) {
+                temp.innerHTML += 'genre ';
+            });
+            temp.innerHTML += '<br>';
+
+            mainContainer.append(temp);
+        }
+    }
+    function fetchData() {
+        fetch("https://rodrichulo.github.io/JSON/songlist.json")
+        .then(response => 
+            response.json())
+        .then(data => printData(data));
+    }
+
+
+    </script>
+    </div>
+</body>
+</html>
