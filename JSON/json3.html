@@ -6,22 +6,21 @@
     <div id = "main_div">
 <script>
 
-    var list = fetchData();
-    // printData(list)
+
+    fetchData();
 
     function printData(data) {
         var mainContainer = document.getElementById("main_div");
         for (let i = 0; i < data.length; i++) {
             var temp = document.createElement("div");
             temp.innerHTML = 'Title: ' + data[i].title + '<br>' + 'Year: ' + data[i].year + '<br>';
-            temp.innerHTML += 'Artists: ' + data[i].artist + '<br';
+            temp.innerHTML += 'Artists: ' + data[i].artist + '<br>';
 
-            temp.innerHTML += 'br' + 'Genres: ';
-            console.log(data[i].genre[0]);
-            data[i].artist.forEach(function(genre) {
+            temp.innerHTML += 'Genres: ';
+            data[i].genre.forEach(function(genre) {
                 temp.innerHTML += 'genre ';
             });
-            temp.innerHTML += '<br>';
+            temp.innerHTML += '<br><br>';
 
             mainContainer.append(temp);
         }
@@ -30,7 +29,9 @@
         fetch("https://rodrichulo.github.io/JSON/songlist.json")
         .then(response => 
             response.json())
-        .then(data => printData(data));
+        .then(data => {
+            printData(data);
+        });
     }
 
 

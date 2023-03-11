@@ -1,0 +1,97 @@
+<html>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <head>
+        <title>Json4</title>
+    </head>
+<body>
+    <div id = "main_div"></div>
+    <div id = "part4"></div>
+
+<script>
+    fetchData();
+    /* set the list of genres to automatically have all songs */
+    genre_list = ["All songs"]
+
+    function checkBoxSelection(id, array ) {
+        var t= "";
+        t = "<select id='" + id + "'>";
+        array.forEach(function(genre) {
+            t += "<option>" + genre + "</option>";
+        })
+        t+= "</select>"; 
+        return t;
+	}
+    
+    /* Once the dropdown is accessed, filter by genres when given a type */
+    function filter_genre(type, data) {
+        songs = ""
+        data.forEach(function(song) { 
+            if (type == "All songs" || song.genre.includes(type)) { 
+                songs += "Title:" + song.title + "</br>"
+                +  "Artist: " + song.artist + "</br>"
+                +  "Genres: " ;
+                genre_str = "";
+
+                song.genre.forEach(function(genre) { 
+                    genre_str += genre + ", ";
+                })
+
+                songs += genre_str.substring(0, genre_str.length-2);
+                songs += "</br>" +  "Release year: " + song.year + "</br></br>";
+            }
+        }) 
+        return songs;
+	}
+
+    /* Prints initial data and makes dropdown */
+    function printData(data) {
+        var mainContainer = document.getElementById("main_div");
+        var temp = "";
+        for (let i = 0; i < data.length; i++) {
+            temp += "Title: " + data[i].title + "<br>" + 'Year: ' + data[i].year + "<br>";
+            temp += 'Artist: ' + data[i].artist + '<br>';
+
+            temp += 'Genres: ';
+            data[i].genre.forEach(function(genre) {
+                temp += genre + ", ";
+
+                if (!genre_list.includes(genre)) {
+                    genre_list.push(genre);
+                }
+            });
+            
+            /*Makes a dropdown for the checkbox selection */
+            /* get rid of last comma */
+            temp = temp.substring(0, temp.length-2);
+            temp += "<br><br>";
+            form = "<form> ";
+            form += checkBoxSelection("Genres", genre_list);
+            form += "<button id =\"btn\" type = 'button'>Filter</button></form>";
+            document.getElementById("part4").innerHTML = form;
+            document.getElementById("main_div").innerHTML = temp;
+            
+
+            /* Button for checking the filter. Doing here to keep all data */
+            $(function() {
+                $("#btn").click(function() {
+                    type = document.getElementById("Genres").value;
+                    genre_list = filter_genre(type, data);
+                    document.getElementById("main_div").innerHTML = genre_list;
+                
+                });
+			});
+        }
+    }
+
+    /* fetch the data using fetch API */
+    function fetchData() {
+        fetch("https://rodrichulo.github.io/JSON/songlist.json")
+        .then(response => 
+            response.json())
+        .then(data => {
+            printData(data);
+        });
+    }
+    </script>
+</body>
+</html>
