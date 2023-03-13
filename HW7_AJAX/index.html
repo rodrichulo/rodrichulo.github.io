@@ -5,6 +5,7 @@
 	<script>
 		function getWelcome(){
 			var ajaxRequest = new XMLHttpRequest();
+			ajaxRequest.open("GET", "https://fruityvice.com/api/fruit/all", true);
 			ajaxRequest.onreadystatechange = function(){
 			
 				if(ajaxRequest.readyState == 4){
@@ -22,7 +23,6 @@
 			
 			
 			}
-			ajaxRequest.open('GET', 'fruityvice.com/api/fruit/all');
 			ajaxRequest.send();
 		}
 	
