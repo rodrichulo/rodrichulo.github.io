@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
 <head>
-	<title>Weather API</title>
+	<title>Cat API</title>
 	<meta charset="utf-8"/>
 	<script>
-		function getWeather() {
+		function getAPI() {
 			/* Step 1: Make instance of request object...
 			...to make HTTP request after page is loaded*/
 			request = new XMLHttpRequest();
@@ -26,9 +26,7 @@
 					// Step 5: wait for done + success
 					console.log("5 - response received");
 					result = request.responseText;
-					alert(result);
 					weather = JSON.parse(result);
-					
 					document.getElementById("data").innerHTML ="current temp in boston: ";
 					
 				}
@@ -50,7 +48,7 @@
 </head>
 
 
-<body onload="getWeather()">
+<body onload="getAPI()">
 
 	<h1>Weather</h1>
 	<div id="data">Loading...</div>
