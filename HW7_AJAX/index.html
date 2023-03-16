@@ -26,7 +26,8 @@
 					// Step 5: wait for done + success
 					console.log("5 - response received");
 					result = request.responseText;
-					weather = JSON.parse(result);
+					tags = JSON.parse(result);
+					console.log(tags);
 					document.getElementById("data").innerHTML ="current temp in boston: ";
 					
 				}
