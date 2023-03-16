@@ -1,86 +1,141 @@
 <!doctype html>
 <html>
 <head>
-	<title>Dictionary API</title>
+    <script>
+
+    function printData(flatJson) {
+        flatJson = flatJson[0];
+        var word = "<b> Word </b>: " + flatJson.word;
+
+        var p = "<b>Pronounciations: </b>";
+        flatJson.phonetics.forEach((phoneticURL) => {
+            if (('text' in phoneticURL) && (phoneticURL.text != "")) {
+                p += phoneticURL.text + " <br>"
+            }
+        });
+
+        var m = "";
+        flatJson.meanings.forEach((meaning) => {
+            m += "<b>" + meaning.partOfSpeech + "</b>: ";
+            meaning.definitions.forEach((definition) => {
+                m += definition.definition + "<br>"
+            });
+            m += "<br>";
+        });
+
+        var urls = "<b>Definitions: </b>";
+        flatJson.sourceUrls.forEach((source) => {
+            urls += "Source: <a href=\"" + source + "\"> Dictionary Link </a><br>";
+        });
+
+        document.getElementById("Text").innerHTML = 
+            word + " <br> " + p + "<br>" + m + "<br>" + urls + "<br>"
+            + "This API returns a dictionary entry for a given word (in this case Hello) <br>"
+            + "I found it on Github <br> I Used the GET option and entered the word hello for the request"
+            + "This would be useful for a book app if you wanted to highlight unusual words and show the entry when the user hovers";
+    }
+    async function fetchText() {
+        const response = await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/hello');
+        if (!response.ok) {
+            const message = `An error has occured: ${response.status}`;
+            throw new Error(message);
+        }
+
+        const data = await response.json();
+        return data;
+    }
+    fetchText().catch(error => {
+        error.message;
+    });
+
+    fetchText().then(data => {
+        printData(data);
+    });
+
+    </script>
+
+/* Using Ajax Request */
+<script>
+    function getAPI() {
+        /* Step 1: Make instance of request object...
+        ...to make HTTP request after page is loaded*/
+        request = new XMLHttpRequest();
+        console.log("1 - request object created");
+
+        // Step 2: Set the URL for the AJAX request to be the JSON file
+
+        request.open("GET", "https://api.dictionaryapi.dev/api/v2/entries/en/hello", true)
+
+        console.log("2 - opened request file");
+
+        // Step 3: set up event handler/callback
+
+        request.onreadystatechange = function() {
+            console.log("3 - readystatechange event fired.");
+
+            if (request.readyState == 4 && request.status == 200) {
+
+                // Step 5: wait for done + success
+                console.log("5 - response received");
+                result = request.responseText;
+                var flatJson = JSON.parse(result);
+                flatJson = flatJson[0];
+                var word = "<b> Word (USING GET) </b>: " + flatJson.word;
+
+                var p = "<b>Pronounciations: </b>";
+                flatJson.phonetics.forEach((phoneticURL) => {
+                    if (('text' in phoneticURL) && (phoneticURL.text != "")) {
+                        p += phoneticURL.text + " <br>"
+                    }
+                });
+
+                var m = "";
+                flatJson.meanings.forEach((meaning) => {
+                    m += "<b>" + meaning.partOfSpeech + "</b>: ";
+                    meaning.definitions.forEach((definition) => {
+                        m += definition.definition + "<br>"
+                    });
+                    m += "<br>";
+                });
+
+                var urls = "<b>Definitions: </b>";
+                flatJson.sourceUrls.forEach((source) => {
+                    urls += "Source: <a href=\"" + source + "\"> Dictionary Link </a><br>";
+                });
+
+                document.getElementById("Text").innerHTML = 
+                    word + " <br> " + p + "<br>" + m + "<br>" + urls + "<br>"
+                    + "This API returns a dictionary entry for a given word (in this case Hello) <br>"
+                    + "I found it on Github <br> I Used the GET option and entered the word hello for the request"
+                    + "This would be useful for a book app if you wanted to highlight unusual words and show the entry when the user hovers";
+            }
+
+            else if (request.readyState == 4 && request.status != 200) {
+
+                document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+
+            }
+
+            else if (request.readyState == 4 && request.status != 200) {
+
+            console.log("Something is wrong!  Check the logs to see where this went off the rails");
+
+            }
+        }
+    // Step 4: fire off the HTTP request
+        request.send();
+        console.log("4 - Request sent");
+    }
+</script>
+	<title>Dictionary API w/Fetch</title>
 	<meta charset="utf-8"/>
-	<script>
-		function getAPI() {
-			/* Step 1: Make instance of request object...
-			...to make HTTP request after page is loaded*/
-			request = new XMLHttpRequest();
-			console.log("1 - request object created");
- 
-			// Step 2: Set the URL for the AJAX request to be the JSON file
- 
-			request.open("GET", "https://api.dictionaryapi.dev/api/v2/entries/en/hello", true)
+    <body>
+        <h1>Word Definition API </h1>
+        <div id="Text"></div>
+        <div id ="second">
+            <button type="button" onclick="getAPI()">API Get</button>
+        </div>
+    </body>
+	
 
-			console.log("2 - opened request file");
- 
-			// Step 3: set up event handler/callback
-
-			request.onreadystatechange = function() {
-				console.log("3 - readystatechange event fired.");
- 
-				if (request.readyState == 4 && request.status == 200) {
-
-					// Step 5: wait for done + success
-					console.log("5 - response received");
-					result = request.responseText;
-					var flatJson = JSON.parse(result);
-					flatJson = flatJson[0];
-					var word = "<b> Word </b>: " + flatJson.word;
-
-					var p = "<b>Pronounciations: </b>";
-					flatJson.phonetics.forEach((phoneticURL) => {
-						if (('text' in phoneticURL) && (phoneticURL.text != "")) {
-							p += phoneticURL.text + " <br>"
-						}
-					});
-
-					var m = "";
-					flatJson.meanings.forEach((meaning) => {
-						m += "<b>" + meaning.partOfSpeech + "</b>: ";
-						meaning.definitions.forEach((definition) => {
-							m += definition.definition + "<br>"
-						});
-						m += "<br>";
-					});
-
-					var urls = "<b>Definitions: </b>";
-					flatJson.sourceUrls.forEach((source) => {
-						urls += "Source: <a href=\"" + source + "\"> Dictionary Link </a><br>";
-					});
-
-					document.getElementById("Text").innerHTML = 
-						word + " <br> " + p + "<br>" + m + "<br>" + urls + "<br>"
-						+ "This API returns a dictionary entry for a given word (in this case Hello) <br>"
-						+ "I found it on Github <br> I Used the GET option and entered the word hello for the request"
-						+ "This would be useful for a book app if you wanted to highlight unusual words and show the entry when the user hovers";
-				}
-
-				else if (request.readyState == 4 && request.status != 200) {
-
-					document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
-
-				}
-
-				else if (request.readyState == 4 && request.status != 200) {
-
-				console.log("Something is wrong!  Check the logs to see where this went off the rails");
-
-				}
-			}
-		// Step 4: fire off the HTTP request
-			request.send();
-			console.log("4 - Request sent");
-		}
-	</script>
 </head>
-
-
-<body onload="getAPI()">
-
-	<h1>Word Definition API </h1>
-	<div id="Text"></div>
-</body>
-</html>
