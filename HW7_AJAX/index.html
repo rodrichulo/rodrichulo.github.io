@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>Cat API</title>
+	<title>Dictionary API</title>
 	<meta charset="utf-8"/>
 	<script>
 		function getAPI() {
@@ -12,7 +12,7 @@
  
 			// Step 2: Set the URL for the AJAX request to be the JSON file
  
-			request.open("GET", "https://cataas.com/api/cat", true)
+			request.open("GET", "https://api.dictionaryapi.dev/api/v2/entries/en/hello", true)
 
 			console.log("2 - opened request file");
  
@@ -26,20 +26,49 @@
 					// Step 5: wait for done + success
 					console.log("5 - response received");
 					result = request.responseText;
-					tags = JSON.parse(result);
-					console.log(tags);
-					document.getElementById("data").innerHTML ="Printing cat";
-					
+					var flatJson = JSON.parse(result);
+					flatJson = flatJson[0];
+					var word = "<b> Word </b>: " + flatJson.word;
+
+					var p = "<b>Pronounciations: </b>";
+					flatJson.phonetics.forEach((phoneticURL) => {
+						if (('text' in phoneticURL) && (phoneticURL.text != "")) {
+							p += phoneticURL.text + " <br>"
+						}
+					});
+
+					var m = "";
+					flatJson.meanings.forEach((meaning) => {
+						m += "<b>" + meaning.partOfSpeech + "</b>: ";
+						meaning.definitions.forEach((definition) => {
+							m += definition.definition + "<br>"
+						});
+						m += "<br>";
+					});
+
+					var urls = "<b>Definitions: </b>";
+					flatJson.sourceUrls.forEach((source) => {
+						urls += "Source: <a href=\"" + source + "\"> Dictionary Link </a><br>";
+					});
+
+					document.getElementById("Text").innerHTML = 
+						word + " <br> " + p + "<br>" + m + "<br>" + urls + "<br>"
+						+ "This API returns a dictionary entry for a given word (in this case Hello) <br>"
+						+ "I found it on Github <br> I Used the GET option and entered the word hello for the request"
+						+ "This would be useful for a book app if you wanted to highlight unusual words and show the entry when the user hovers";
 				}
+
 				else if (request.readyState == 4 && request.status != 200) {
 
 					document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
 
 				}
-				else if (request.readyState == 3) {
-					document.getElementById("data").innerHTML = "Too soon!  Try again";
-				}
 
+				else if (request.readyState == 4 && request.status != 200) {
+
+				console.log("Something is wrong!  Check the logs to see where this went off the rails");
+
+				}
 			}
 		// Step 4: fire off the HTTP request
 			request.send();
@@ -51,7 +80,7 @@
 
 <body onload="getAPI()">
 
-	<h1>Weather</h1>
-	<div id="data">Loading...</div>
+	<h1>Word Definition API </h1>
+	<div id="Text"></div>
 </body>
 </html>
