@@ -12,7 +12,7 @@
  
 			// Step 2: Set the URL for the AJAX request to be the JSON file
  
-			request.open("GET", "https://cataas.com/api/tags", true)
+			request.open("GET", "https://cataas.com/api/cat", true)
 
 			console.log("2 - opened request file");
  
@@ -28,7 +28,7 @@
 					result = request.responseText;
 					tags = JSON.parse(result);
 					console.log(tags);
-					document.getElementById("data").innerHTML ="current temp in boston: ";
+					document.getElementById("data").innerHTML ="Printing cat";
 					
 				}
 				else if (request.readyState == 4 && request.status != 200) {
