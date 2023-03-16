@@ -32,7 +32,8 @@
             word + " <br> " + p + "<br>" + m + "<br>" + urls + "<br>"
             + "This API returns a dictionary entry for a given word (in this case Hello) <br>"
             + "I found it on Github <br> I Used the GET option and entered the word hello for the request"
-            + "This would be useful for a book app if you wanted to highlight unusual words and show the entry when the user hovers";
+            + "This would be useful for a book app if you wanted to highlight unusual words and show the entry when the user hovers" +
+            " and this would also be useful for a search query if a user wants the definition of a word";
     }
     async function fetchText() {
         const response = await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/hello');
@@ -54,8 +55,9 @@
 
     </script>
 
-/* Using Ajax Request */
+
 <script>
+    /* Using Ajax Request */
     function getAPI() {
         /* Step 1: Make instance of request object...
         ...to make HTTP request after page is loaded*/
@@ -107,7 +109,8 @@
                     word + " <br> " + p + "<br>" + m + "<br>" + urls + "<br>"
                     + "This API returns a dictionary entry for a given word (in this case Hello) <br>"
                     + "I found it on Github <br> I Used the GET option and entered the word hello for the request"
-                    + "This would be useful for a book app if you wanted to highlight unusual words and show the entry when the user hovers";
+                    + "This would be useful for a book app if you wanted to highlight unusual words and show the entry when the user hovers" +
+                    " and this would also be useful for a search query if a user wants the definition of a word";
             }
 
             else if (request.readyState == 4 && request.status != 200) {
